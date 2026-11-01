@@ -1,0 +1,11 @@
+<header class="site-header">
+  <a class="brand" href="{{ '/' | relative_url }}">{% include logo.html %}</a>
+  <button class="menu-toggle" aria-controls="navigation" aria-expanded="false" aria-label="Open Menu"><span></span><span></span></button>
+  <nav id="navigation" aria-label="Main navigation">
+    <a href="/"{% if page.nav == 'home' %} aria-current="page"{% endif %}>Home</a>
+    <a href="/about"{% if page.nav == 'about' %} aria-current="page"{% endif %}>About</a>
+    <a href="/blog"{% if page.nav == 'blog' %} aria-current="page"{% endif %}>Blog</a>
+    {% if site.print_storefront_url != '' %}<a href="{{ site.print_storefront_url | escape }}">Prints</a>{% endif %}
+    <a class="button" href="/lessons"{% if page.nav == 'lessons' %} aria-current="page"{% endif %}>Book</a>
+  </nav>
+</header>

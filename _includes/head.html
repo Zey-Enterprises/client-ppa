@@ -1,0 +1,17 @@
+<link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
+{% assign page_description = page.description | default: site.description | strip_html | normalize_whitespace %}
+{% assign canonical = page.canonical | default: page.url | replace: 'index.html', '' | absolute_url %}
+{% assign share_image = page.image | default: '/assets/images/climbing-instruction.webp' | absolute_url %}
+<title>{% if page.nav == 'home' %}{{ page.title | escape }}{% else %}{{ page.title | escape }} — {{ site.title | escape }}{% endif %}</title>
+<meta name="description" content="{{ page_description | escape }}">
+<link rel="canonical" href="{{ canonical }}">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:title" content="{{ page.title | escape }}">
+<meta property="og:description" content="{{ page_description | escape }}">
+<meta property="og:url" content="{{ canonical }}">
+<meta property="og:image" content="{{ share_image }}">
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta name="twitter:card" content="summary_large_image">
+{% if page.layout == 'post' %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+<meta name="author" content="Chase Popp">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":{{ page.title | jsonify }},"datePublished":{{ page.date | date_to_xmlschema | jsonify }},"author":{"@type":"Person","name":"Chase Popp"},"url":{{ canonical | jsonify }},"image":{{ share_image | jsonify }}}</script>{% endif %}

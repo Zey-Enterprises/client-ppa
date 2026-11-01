@@ -1,0 +1,11 @@
+---
+layout: "default"
+permalink: /blog
+title: "Blog"
+nav: "blog"
+overlay: true
+image: "/assets/images/ice-climbing-valley.webp"
+description: "Climbing stories from Chase Popp: Colorado alpine routes, ice climbing, and adventures."
+---
+<section class="blog-hero image-hero" style="background-image:url('/assets/images/ice-climbing-valley.webp')"><div class="wrap"><h1>Blog</h1></div></section>
+<section class="blog-list wrap">{% assign articles = site.posts | sort: 'order' %}{% for post in articles %}<article class="blog-card"><a class="blog-photo" href="{{ post.url }}"><img src="{{ post.image }}" alt="{{ post.title | escape }}" loading="lazy" width="1000" height="667"></a><div class="blog-summary"><h2><a href="{{ post.url }}">{{ post.title }}</a></h2><p>{{ post.description }}</p><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%-m/%-d/%y' }}</time></div></article>{% endfor %}</section>

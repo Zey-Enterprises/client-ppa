@@ -1,0 +1,24 @@
+title: "Popp's Peak Adventures"
+description: "Rock climbing instruction with Chase Popp in Colorado’s South Platte."
+url: "https://chasepopp.com"
+baseurl: ""
+lang: en-US
+timezone: America/Denver
+permalink: /blog/:title
+markdown: kramdown
+strict_front_matter: true
+print_storefront_url: ""
+exclude:
+  - .codex
+  - AGENTS.md
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - docs
+  - scripts
+  - output
+  - vendor
+  - .bundle
+  - .playwright-cli
+  - .jekyll-cache
+  - .sass-cache
